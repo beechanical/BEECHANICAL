@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(card);
     });
 
-    // Form handling with Google Apps Script
+    // Form handling with Formspree (no CORS issues)
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async function(e) {
@@ -102,28 +102,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Prepare form data
             const formData = new FormData(this);
-            const data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                company: formData.get('company') || '',
-                phone: formData.get('phone') || '',
-                projectType: formData.get('projectType'),
-                message: formData.get('message'),
-                subscribe: formData.get('subscribe') === 'yes'
-            };
-
-            // Send to Google Apps Script
+            
+            // Send to Formspree
             const submitBtn = this.querySelector('.submit-button');
             const originalText = submitBtn.textContent;
             submitBtn.textContent = '📤 Sending...';
             submitBtn.disabled = true;
 
             try {
-                const response = await fetch('https://script.google.com/macros/s/AKfycbz0kTPlz-ivozj32BvjTIdHXe_HzgDEl69iXVvxXSvBdatmL3u4YXdV_0nDimJeO_5tZQ/exec', {
+                const response = await fetch('https://formspree.io/f/xojnqkrl', {
                     method: 'POST',
-                    body: JSON.stringify(data),
+                    body: formData,
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Accept': 'application/json'
                     }
                 });
 
