@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Beechanical</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">BEE<span>CHANICAL</span></a>
+            
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link nav-cta active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header contact-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p class="page-subtitle">Have a project in mind? Let's talk about how we can help bring your ideas to life.</p>
+        </div>
+    </section>
+
+    <!-- Contact Main Content -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2>Send us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form class="contact-form" name="contact">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Project Type <span class="required">*</span></label>
+                            <select id="project-type" name="projectType" required>
+                                <option value="">Select a service...</option>
+                                <option value="engineering">Engineering & Simulation</option>
+                                <option value="prototyping">Prototyping & Electronics</option>
+                                <option value="digital">Digital Solutions</option>
+                                <option value="design">Design & Communication</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Project Details <span class="required">*</span></label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your project, timeline, and budget range..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="subscribe" value="yes">
+                                    Subscribe to our updates and insights
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-button">Send Message</button>
+                        <p class="form-note">We respect your privacy. Your information will only be used to contact you about your project.</p>
+                    </form>
+                </div>
+
+                <!-- Contact Info Sidebar -->
+                <div class="contact-info-sidebar">
+                    <!-- Direct Contact -->
+                    <div class="contact-card">
+                        <h3>Direct Contact</h3>
+                        <div class="contact-method">
+                            <div class="contact-method-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-method-content">
+                                <h4>Email</h4>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=beechanical5@gmail.com&su=Beechanical%20Project%20Inquiry" target="_blank" rel="noopener noreferrer">beechanical5@gmail.com</a>
+                                <p class="contact-note">Response within 24 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-method-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="contact-method-content">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/213697341170" target="_blank" rel="noopener noreferrer">+213 697 34 11 70</a>
+                                <p class="contact-note">Quick response available</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="contact-method-icon"><i class="fab fa-instagram"></i></div>
+                            <div class="contact-method-content">
+                                <h4>Instagram</h4>
+                                <a href="https://www.instagram.com/beechanical?igsh=MTV1NjdrMGpjdzF3bg%3D%3D" target="_blank" rel="noopener noreferrer">Visit our profile</a>
+                                <p class="contact-note">Connect with our team</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Process -->
+                    <div class="contact-card">
+                        <h3>Our Process</h3>
+                        <div class="process-mini">
+                            <div class="process-mini-step">
+                                <div class="step-mini-number">1</div>
+                                <div class="step-mini-text">
+                                    <strong>Initial Consultation</strong>
+                                    <p>We discuss your project goals and requirements</p>
+                                </div>
+                            </div>
+                            <div class="process-mini-step">
+                                <div class="step-mini-number">2</div>
+                                <div class="step-mini-text">
+                                    <strong>Proposal & Quote</strong>
+                                    <p>Detailed timeline and pricing based on scope</p>
+                                </div>
+                            </div>
+                            <div class="process-mini-step">
+                                <div class="step-mini-number">3</div>
+                                <div class="step-mini-text">
+                                    <strong>Project Execution</strong>
+                                    <p>Regular updates and collaborative feedback</p>
+                                </div>
+                            </div>
+                            <div class="process-mini-step">
+                                <div class="step-mini-number">4</div>
+                                <div class="step-mini-text">
+                                    <strong>Delivery & Support</strong>
+                                    <p>Final deliverables with ongoing support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability -->
+                    <div class="contact-card availability">
+                        <h3>Availability</h3>
+                        <p><i class="fas fa-calendar"></i> <strong>Response Time:</strong> Within 24 hours</p>
+                        <p><i class="fas fa-clock"></i> <strong>Working Days:</strong> Sunday - Thursday</p>
+                        <p><i class="fas fa-globe"></i> <strong>Timezone:</strong> UTC-5 (EST)</p>
+                        <p><i class="fas fa-phone"></i> <strong>Urgent Matters:</strong> Contact via WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>What's the typical project timeline?</h3>
+                    <p>Timelines vary based on project complexity. Simple projects: 1-2 weeks. Medium: 3-6 weeks. Complex: 2-3 months. We provide detailed timelines in our proposal.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer student discounts?</h3>
+                    <p>Yes! Student pricing is our core offering. We typically offer 20-30% discounts for verified students and educational projects.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What file formats do you deliver?</h3>
+                    <p>We deliver in industry-standard formats: STP/STEP, DWG, PDF for CAD; STL for 3D printing; HTML/CSS/JS for web; PNG/SVG for design.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can you work with existing designs?</h3>
+                    <p>Absolutely! We can improve, optimize, or rebuild existing designs. Many clients come with rough concepts we help refine.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you handle manufacturing coordination?</h3>
+                    <p>We can prepare designs for manufacturing and recommend fabrication partners, though we don't manufacture directly.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What's your payment structure?</h3>
+                    <p>Typically 50% upfront, 50% at delivery for fixed projects. Hourly work is billed weekly. Flexible arrangements for students available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-banner-content">
+                <h2>Still Have Questions?</h2>
+                <p>Our team is ready to discuss your project in detail.</p>
+                <a href="#contact-form" class="cta-button-outline">Start Conversation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">BEE<span>CHANICAL</span></div>
+                    <p>Engineering solutions with student accessibility.</p>
+                    <p class="footer-slogan">Be like a bee. Be Beechanical.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#engineering">Engineering & Simulation</a></li>
+                        <li><a href="services.html#prototyping">Prototyping & Electronics</a></li>
+                        <li><a href="services.html#digital">Digital Solutions</a></li>
+                        <li><a href="services.html#design">Design & Communication</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.facebook.com/profile.php?id=61587474098991" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                        <li><a href="https://www.instagram.com/beechanical?igsh=MTV1NjdrMGpjdzF3bg%3D%3D" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                        <li><a href="https://wa.me/213697341170" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=beechanical5@gmail.com&su=Beechanical%20Project%20Inquiry" target="_blank" rel="noopener noreferrer">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Beechanical. All rights reserved.</p>
+                <p>Built with precision. Powered by collaboration.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
