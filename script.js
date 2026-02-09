@@ -3,7 +3,142 @@
  * Handles navigation interactivity and smooth scrolling
  */
 
+// Hexagon Canvas Animation
+function initHexagonCanvas() {
+    const canvas = document.getElementById('hexagonCanvas');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    const hexagons = [];
+    let animationId;
+    
+    function resizeCanvas() {
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+    }
+    
+    class Hexagon {
+        constructor(x, y, size) {
+            this.x = x;
+            this.y = y;
+            this.size = size;
+            this.baseOpacity = Math.random() * 0.15 + 0.05;
+            this.currentOpacity = this.baseOpacity;
+            this.targetOpacity = this.baseOpacity;
+            this.rotation = Math.random() * Math.PI * 2;
+            this.rotationSpeed = (Math.random() - 0.5) * 0.002;
+        }
+        
+        update(mouseX, mouseY) {
+            // Calculate distance to mouse
+            const dx = mouseX - this.x;
+            const dy = mouseY - this.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            const maxDistance = 200;
+            
+            // Increase opacity on hover
+            if (distance < maxDistance) {
+                this.targetOpacity = Math.min(0.4, this.baseOpacity + (1 - distance / maxDistance) * 0.35);
+            } else {
+                this.targetOpacity = this.baseOpacity;
+            }
+            
+            // Smooth opacity transition
+            this.currentOpacity += (this.targetOpacity - this.currentOpacity) * 0.1;
+            
+            // Update rotation
+            this.rotation += this.rotationSpeed;
+        }
+        
+        draw() {
+            ctx.save();
+            ctx.translate(this.x, this.y);
+            ctx.rotate(this.rotation);
+            
+            // Draw hexagon outline
+            ctx.strokeStyle = `rgba(242, 183, 5, ${this.currentOpacity})`;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            
+            for (let i = 0; i < 6; i++) {
+                const angle = (i * Math.PI / 3);
+                const hx = Math.cos(angle) * this.size;
+                const hy = Math.sin(angle) * this.size;
+                
+                if (i === 0) {
+                    ctx.moveTo(hx, hy);
+                } else {
+                    ctx.lineTo(hx, hy);
+                }
+            }
+            ctx.closePath();
+            ctx.stroke();
+            
+            // Draw filled hexagon with very low opacity
+            ctx.fillStyle = `rgba(242, 183, 5, ${this.currentOpacity * 0.3})`;
+            ctx.fill();
+            
+            ctx.restore();
+        }
+    }
+    
+    function initHexagons() {
+        hexagons.length = 0;
+        const hexSize = 30;
+        const spacing = 90;
+        
+        for (let y = -spacing; y < canvas.height + spacing; y += spacing) {
+            for (let x = -spacing; x < canvas.width + spacing; x += spacing) {
+                const offsetX = (Math.floor(y / spacing) % 2) * (spacing / 2);
+                hexagons.push(new Hexagon(x + offsetX, y, hexSize));
+            }
+        }
+    }
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Get mouse position
+        const rect = canvas.getBoundingClientRect();
+        const mouseX = window.mouseX || rect.width / 2;
+        const mouseY = window.mouseY || rect.height / 2;
+        
+        // Update and draw hexagons
+        hexagons.forEach(hex => {
+            hex.update(mouseX, mouseY);
+            hex.draw();
+        });
+        
+        animationId = requestAnimationFrame(animate);
+    }
+    
+    // Initialize
+    resizeCanvas();
+    initHexagons();
+    animate();
+    
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            resizeCanvas();
+            initHexagons();
+        }, 250);
+    });
+}
+
+// Track mouse position globally
+document.addEventListener('mousemove', (e) => {
+    window.mouseX = e.clientX;
+    window.mouseY = e.clientY;
+});
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize hexagon canvas
+    initHexagonCanvas();
+    
     // Mobile Navigation Toggle
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
