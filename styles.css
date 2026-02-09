@@ -34,6 +34,8 @@ body {
     line-height: 1.6;
     background: var(--gray-light);
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 /* Typography */
@@ -1826,6 +1828,22 @@ footer {
     
     .container {
         padding: 0 1.5rem;
+    }
+    
+    /* About Page Mobile */
+    .visual-placeholder {
+        padding: 1.5rem;
+        min-height: 300px;
+    }
+    
+    .hexagon-pattern {
+        gap: 1rem;
+    }
+    
+    .hex-element {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
     }
     
     /* Navigation */
